@@ -15,14 +15,18 @@ export const weatherApi = async zipCode => {
   const weatherLoc = await weatherLocRes.json();
 
   const { city, state } = weatherLoc.properties.relativeLocation.properties;
-  console.log(city, state);
 
   const { forecast } = weatherLoc.properties;
 
   const forecastRes = await fetch(`${forecast}`);
   const forecastObj = await forecastRes.json();
+
+  const result = {
+    location: { city, state },
+    forecasts: forecastObj.properties.periods
+  };
   
-  return forecastObj.properties.periods;
+  return result;
 };
 
 export const cleanForecast = forecasts => {
