@@ -24,5 +24,5 @@ export const weatherApi = async zipCode => {
   const forecastRes = await fetch(`${forecast}`);
   const forecastObj = await forecastRes.json();
   
-  return forecastObj;
+  return forecastObj.properties.periods;
 };

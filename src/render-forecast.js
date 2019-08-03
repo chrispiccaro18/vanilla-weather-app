@@ -23,3 +23,11 @@ export const createForecastLi = forecast => {
   template.innerHTML = html;
   return template.content; 
 };
+
+const forecastList = document.getElementById('forecast');
+
+export default forecasts => {
+  forecasts.forEach(forecast => {
+    forecastList.appendChild(createForecastLi(forecast));
+  });
+};
