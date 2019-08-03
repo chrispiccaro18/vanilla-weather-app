@@ -1,6 +1,10 @@
 import { weatherApi } from './services/weatherApi.js';
+import forecasts from '../data/mock.js';
+import renderForecast from './render-forecast.js';
 
 const searchForm = document.getElementById('search-by-zip');
+
+renderForecast(forecasts);
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
