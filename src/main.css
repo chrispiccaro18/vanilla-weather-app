@@ -25,13 +25,13 @@ body {
 #search-by-zip {
   height: 2rem;
 
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   display: flex;
 }
 
 #search-by-zip label {
-  height: 84%;
+  /* height: 84%; */
   align-self: center;
 }
 
@@ -74,4 +74,9 @@ body {
 
 #forecast li .short {
   font-size: 0.75rem;
+}
+
+#forecast li .icon {
+  max-width: 100%;
+  max-height: 40%;
 }
