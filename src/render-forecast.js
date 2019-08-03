@@ -27,6 +27,10 @@ export const createForecastLi = forecast => {
 const forecastList = document.getElementById('forecast');
 
 export default forecasts => {
+  while(forecastList.firstChild) {
+    forecastList.removeChild(forecastList.firstChild);
+  }
+
   forecasts.forEach(forecast => {
     forecastList.appendChild(createForecastLi(forecast));
   });

@@ -1,8 +1,6 @@
 const LAT_LNG_BASE_URL = 'https://zip-to-lat-and-lng.herokuapp.com/api/v1/zip';
 const WEATHER_BASE_URL = 'https://api.weather.gov';
 
-// https://api.weather.gov/points/39.7456,-97.0892
-
 export const weatherApi = async zipCode => {
   const latLngRes = await fetch(`${LAT_LNG_BASE_URL}/${zipCode}`);
   const latLng = await latLngRes.json();
@@ -25,4 +23,8 @@ export const weatherApi = async zipCode => {
   const forecastObj = await forecastRes.json();
   
   return forecastObj.properties.periods;
+};
+
+export const cleanForecast = forecasts => {
+  return forecasts.filter(forecast => !forecast.name.toLowerCase().includes('night'));
 };

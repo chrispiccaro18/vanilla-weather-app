@@ -1,10 +1,11 @@
-import { weatherApi } from './services/weatherApi.js';
+import { weatherApi, cleanForecast } from './services/weatherApi.js';
 import forecasts from '../data/mock.js';
 import renderForecast from './render-forecast.js';
 
 const searchForm = document.getElementById('search-by-zip');
 
-renderForecast(forecasts);
+const cleanedForecast = cleanForecast(forecasts);
+renderForecast(cleanedForecast.slice(0, 5));
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -13,7 +14,8 @@ searchForm.addEventListener('submit', event => {
 
   weatherApi(zipCode)
     .then(response => {
-      console.log(response);
+      const cleanedForecast = cleanForecast(response);
+      renderForecast(cleanedForecast.slice(0, 5));
     });
 
 });
