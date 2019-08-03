@@ -1,0 +1,77 @@
+header, main {
+  width: 100%;
+}
+
+header, form, section {
+  padding: 0.1rem;
+  margin: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-by-zip {
+  height: 2rem;
+
+  font-size: 1.5rem;
+
+  display: flex;
+}
+
+#search-by-zip label {
+  height: 84%;
+  align-self: center;
+}
+
+#search-by-zip input {
+  flex-grow: 2;
+}
+
+#search-by-zip button {
+  flex-grow: 1.5;
+  font-size: 1.25rem;
+}
+
+#forecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+#forecast li {
+  list-style-type: none;
+
+  text-align: center;
+
+  height: 30vh;
+  width: 15vw;
+
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+#forecast li .temp {
+  font-size: 1.5rem;
+}
+
+#forecast li .short {
+  font-size: 0.75rem;
+}
