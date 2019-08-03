@@ -12,7 +12,7 @@ export const createForecastLi = forecast => {
 
   const html = /*html*/`
 		<li class=${dayOrNight}>
-      <p class="name">${name}</p>
+      <p class="name">${name.toLowerCase().includes('this') ? 'Today' : name}</p>
       <p class="temp">${temperature}&deg;${temperatureUnit}</p>
       <img src="${icon}" alt="weather icon" class="icon">
       <p class="short">${shortForecast}</p>

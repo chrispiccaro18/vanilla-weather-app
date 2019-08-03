@@ -8,7 +8,7 @@ test('creates li', function(assert) {
 	//Arrange
   const expected = /*html*/`
     <li class="day">
-      <p class="name">This Afternoon</p>
+      <p class="name">Today</p>
       <p class="temp">76°F</p>
       <img src="https://api.weather.gov/icons/land/day/tsra,40?size=medium" alt="weather icon" class="icon">
       <p class="short">Showers And Thunderstorms</p>
